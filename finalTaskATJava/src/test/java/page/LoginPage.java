@@ -1,5 +1,6 @@
 package page;
 
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -67,14 +68,14 @@ public class LoginPage extends BasePage {
 
     public LoginPage clearUsernameField() {
         wait.until(ExpectedConditions.elementToBeClickable(usernameField));
-        usernameField.clear();
+        usernameField.sendKeys(Keys.chord(Keys.CONTROL, "a"), Keys.BACK_SPACE);
         logger.info("Username field cleared");
         return this;
     }
 
     public LoginPage clearPasswordField() {
         wait.until(ExpectedConditions.elementToBeClickable(passwordField));
-        passwordField.clear();
+        passwordField.sendKeys(Keys.chord(Keys.CONTROL, "a"), Keys.BACK_SPACE);
         logger.info("Password field cleared");
         return this;
     }
