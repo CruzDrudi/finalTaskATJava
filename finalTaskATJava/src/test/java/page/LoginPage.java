@@ -51,6 +51,20 @@ public class LoginPage extends BasePage {
         return this;
     }
 
+    public LoginPage inputUsername(String username) {
+        wait.until(ExpectedConditions.elementToBeClickable(usernameField));
+        usernameField.sendKeys(username);
+        logger.info("Username field filled");
+        return this;
+    }
+
+    public LoginPage inputPassword(String password) {
+        wait.until(ExpectedConditions.elementToBeClickable(passwordField));
+        usernameField.sendKeys(password);
+        logger.info("Password field filled");
+        return this;
+    }
+
     public LoginPage clearUsernameField() {
         wait.until(ExpectedConditions.elementToBeClickable(usernameField));
         usernameField.clear();
