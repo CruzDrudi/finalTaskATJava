@@ -94,6 +94,7 @@ public class LoginPage extends BasePage {
 
     public String getErrorMessage() {
         wait.until(ExpectedConditions.visibilityOf(errorMessage));
+        logger.info("Error message found");
         return errorMessage.getText();
     }
 }

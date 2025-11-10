@@ -27,6 +27,7 @@ public class HomePage extends BasePage {
 
     public String getLogoText() {
         wait.until(ExpectedConditions.visibilityOf(logoApp));
+        logger.info("Logo text found");
         return logoApp.getText();
     }
 }
