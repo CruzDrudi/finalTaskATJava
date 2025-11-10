@@ -12,14 +12,24 @@ public class DriverSingleton {
 
     public static WebDriver getDriver() {
         if (driver == null) {
-            switch (System.getProperty("browser")) {
+            String browser = System.getProperty("browser");
+            if (browser == null) {
+                browser = "firefox";
+            }
+            switch (browser) {
                 case "firefox": {
                     driver = new FirefoxDriver();
+                    break;
                 }
                 case "edge": {
                     driver = new EdgeDriver();
+                    break;
+                }
+                default: {
+                    driver = new FirefoxDriver();
                 }
             }
+            driver.manage().window().maximize();
         }
         return driver;
     }
