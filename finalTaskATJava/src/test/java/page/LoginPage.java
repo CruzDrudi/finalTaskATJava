@@ -60,7 +60,7 @@ public class LoginPage extends BasePage {
 
     public LoginPage inputPassword(String password) {
         wait.until(ExpectedConditions.elementToBeClickable(passwordField));
-        usernameField.sendKeys(password);
+        passwordField.sendKeys(password);
         logger.info("Password field filled");
         return this;
     }

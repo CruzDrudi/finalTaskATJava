@@ -21,9 +21,8 @@ public class HomePage extends BasePage {
 
     @Override
     protected BasePage openPage() {
-        driver.navigate().to(BASE_URL);
-        logger.info("Home page opened");
-        return this;
+        throw new UnsupportedOperationException(
+                "Home page can´t be opened directly, please log in first");
     }
 
     public String getLogoText() {

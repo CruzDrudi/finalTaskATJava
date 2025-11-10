@@ -7,7 +7,7 @@ import page.LoginPage;
 import service.UserCreator;
 
 import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.containsString;
+import static org.hamcrest.Matchers.*;
 
 public class LoginTests extends BaseTest {
 
@@ -49,6 +49,6 @@ public class LoginTests extends BaseTest {
 
         HomePage homePage = new HomePage(driver);
         String logoText = homePage.getLogoText();
-        assertThat(logoText, equals("Swag Labs"));
+        assertThat(logoText, equalTo("Swag Labs"));
     }
 }
